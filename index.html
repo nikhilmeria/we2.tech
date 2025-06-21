@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>we2Tech - Coming Soon</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Background elements -->
+    <div class="bg-grid"></div>
+    <div class="bubble bubble-1"></div>
+    <div class="bubble bubble-2"></div>
+    <div class="bubble bubble-3"></div>
+
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <div class="logo-icon">
+          <i class="fas fa-network-wired"></i>
+        </div>
+        <div class="logo-text">we2Tech</div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <p class="tagline">Innovating the Future of Connectivity</p>
+      <h1>Transforming Digital Experiences with Next-Gen Technology</h1>
+      <p class="description">
+        We're building a revolutionary platform that will
+        <span class="highlight"
+          >redefine how businesses leverage internet technologies</span
+        >. Our solution combines cutting-edge AI, blockchain, and cloud
+        computing to deliver unprecedented performance and security.
+      </p>
+
+      <!-- Countdown Timer -->
+      <div class="countdown">
+        <div class="countdown-item">
+          <div class="countdown-number" id="days">00</div>
+          <div class="countdown-label">Days</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-number" id="hours">00</div>
+          <div class="countdown-label">Hours</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-number" id="minutes">00</div>
+          <div class="countdown-label">Minutes</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-number" id="seconds">00</div>
+          <div class="countdown-label">Seconds</div>
+        </div>
+      </div>
+
+      <!-- Subscription Form -->
+      <div class="subscribe-container">
+        <h2>Get Notified at Launch</h2>
+        <p class="description">
+          Subscribe to be the first to know when we go live and receive
+          exclusive early access offers.
+        </p>
+        <form class="subscribe-form">
+          <input
+            type="email"
+            class="email-input"
+            placeholder="Enter your email address"
+            required
+          />
+          <button type="submit" class="subscribe-btn">Notify Me</button>
+        </form>
+        <p class="form-note">
+          We respect your privacy. Unsubscribe at any time.
+        </p>
+      </div>
+
+      <!-- Social Links -->
+      <div class="social-links">
+        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="Copyright">© 2025 we2Tech. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact Us</a>
+      </div>
+    </footer>
+
+    <script>
+      // Fixed Countdown Timer
+      function updateCountdown() {
+        // Set the launch date to 30 days from now
+        const launchDate = new Date();
+        launchDate.setDate(launchDate.getDate() + 30);
+
+        const currentDate = new Date();
+        const diff = launchDate - currentDate;
+
+        // Calculate days, hours, minutes, seconds
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        // Update the DOM elements
+        document.getElementById("days").textContent = days
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("hours").textContent = hours
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("minutes").textContent = minutes
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("seconds").textContent = seconds
+          .toString()
+          .padStart(2, "0");
+      }
+
+      // Initialize and update every second
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+
+      // Form submission handling
+      document
+        .querySelector(".subscribe-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const emailInput = this.querySelector(".email-input");
+          const email = emailInput.value;
+
+          if (validateEmail(email)) {
+            // In a real application, you would send this to your server
+            alert(
+              `Thank you for subscribing! We'll notify you at ${email} when we launch.`
+            );
+            emailInput.value = "";
+          } else {
+            alert("Please enter a valid email address.");
+          }
+        });
+
+      function validateEmail(email) {
+        const re =
+          /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+      }
+    </script>
+  </body>
+</html>
