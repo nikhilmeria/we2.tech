@@ -183,12 +183,12 @@ img {
 }
 
 .hero-content {
-    width: 50%;
+    width: 20%;
     text-align: left;
 }
 
 .hero-image {
-    width: 50%;
+    width: 80%;
 }
 
 .hero-image img {
@@ -424,23 +424,23 @@ img {
 @media (max-width: 992px) {
     .hero .container {
         flex-direction: column;
-        text-align: center;
+        text-align: left;
     }
-    
+
     .hero-content {
         padding-right: 0;
-        margin-bottom: 50px;
+        margin-bottom: 15px;
+        width: 100%;
     }
-    
+
     .hero-content p {
-        margin: 0 auto 30px;
+        margin: 0 0 30px 0;
     }
-    
+
     .hero-buttons {
         display: flex;
-        justify-content: center;
-    }
-    
+        justify-content: flex-start;
+    }    
     .hero-stats {
         justify-content: center;
     }
@@ -454,7 +454,7 @@ img {
     }
     
     .hero-image {
-        margin-top: 30px;
+        margin-top: 0;
         text-align: center;
         align-self: center;
     }
@@ -504,11 +504,11 @@ img {
         margin-top: 15px;
     }
     
-        .hero {
-            padding: 120px 0 80px;
-        }
+                        .hero {
     
-            .hero-content h1 {
+                            padding: 180px 0 60px;
+    
+                        }            .hero-content h1 {
                 font-size: 1.8rem;
             }    
         .hero-buttons .btn-primary {
@@ -516,9 +516,15 @@ img {
             font-size: 0.9rem;
         }
     
-        .hero-buttons {        flex-direction: column;
-        gap: 15px;
-    }
+            .hero-buttons {
+    
+                flex-direction: column;
+    
+                gap: 15px;
+    
+                align-items: flex-start;
+    
+            }
     
     .hero-stats {
         flex-direction: column;
@@ -531,6 +537,10 @@ img {
 }
 
 @media (max-width: 576px) {
+    .hero {
+        padding: 150px 0 40px;
+    }
+
     .container {
         width: 95%;
     }
