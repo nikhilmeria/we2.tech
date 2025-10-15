@@ -183,12 +183,12 @@ img {
 }
 
 .hero-content {
-    width: 20%;
+    width: 50%;
     text-align: left;
 }
 
 .hero-image {
-    width: 80%;
+    width: 50%;
 }
 
 .hero-image img {
@@ -455,8 +455,10 @@ img {
     
     .hero-image {
         margin-top: 0;
-        text-align: center;
-        align-self: center;
+        width: 90vw;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
     }
     
     .hero-image img {
