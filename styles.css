@@ -177,14 +177,23 @@ img {
 }
 
 .hero .container {
-    display: block;
-    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .hero-content {
-    width: 100%;
+    width: 50%;
     text-align: left;
-    max-width: 600px;
+}
+
+.hero-image {
+    width: 50%;
+}
+
+.hero-image img {
+    width: 100%;
+    display: block;
 }
 
 .hero-content h1 {
@@ -209,38 +218,6 @@ img {
 .hero-buttons .btn-primary {
     margin: 0;
     display: inline-block;
-}
-
-.hero .container {
-    display: block;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-}
-
-.hero-content {
-    width: 100%;
-    padding: 0;
-}
-
-.hero-content h1 {
-    font-size: 3rem;
-    color: #222;
-    line-height: 1.2;
-    margin-bottom: 20px;
-}
-
-.hero-content p {
-    font-size: 1.1rem;
-    color: #666;
-    margin: 0 auto 30px;
-    max-width: 600px;
-}
-
-.hero-buttons {
-    margin-bottom: 40px;
-    display: flex;
-    justify-content: flex-start;
 }
 
 /* Benefits Section */
@@ -468,6 +445,10 @@ img {
         justify-content: center;
     }
     
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
     .section-header h2 {
         font-size: 2rem;
     }
@@ -523,16 +504,19 @@ img {
         margin-top: 15px;
     }
     
-    .hero {
-        padding: 120px 0 80px;
-    }
+        .hero {
+            padding: 120px 0 80px;
+        }
     
-    .hero-content h1 {
-        font-size: 2.2rem;
-    }
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }    
+        .hero-buttons .btn-primary {
+            padding: 10px 24px;
+            font-size: 0.9rem;
+        }
     
-    .hero-buttons {
-        flex-direction: column;
+        .hero-buttons {        flex-direction: column;
         gap: 15px;
     }
     
@@ -550,13 +534,21 @@ img {
     .container {
         width: 95%;
     }
-    
+
     .hero-content h1 {
-        font-size: 2rem;
-    }
-    
-    .section-header h2 {
         font-size: 1.6rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .hero-buttons .btn-primary {
+        padding: 8px 20px;
+        font-size: 0.8rem;
+    }
+
+    .section-header h2 {        font-size: 1.6rem;
     }
     
     .benefit-card,
